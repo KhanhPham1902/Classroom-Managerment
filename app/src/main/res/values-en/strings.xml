@@ -130,6 +130,7 @@
     <string name="noti_cancel">You have unregistered from classroom</string>
     <string name="no_noti">No notifications</string>
     <string name="clear_all_success">All notifications removed</string>
+    <string name="not_date_study">It is not even school day yet</string>
 
     <string name="thdtcb">Practice Basic Electronics</string>
     <string name="ltn">Embedded programming techniques</string>

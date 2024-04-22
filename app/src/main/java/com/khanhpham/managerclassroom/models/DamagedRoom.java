@@ -5,12 +5,14 @@ public class DamagedRoom {
     private String report;
     private String time_report;
     private String date_study;
+    private String time_study;
 
-    public DamagedRoom(String room, String report, String time_report, String date_study) {
+    public DamagedRoom(String room, String report, String time_report, String date_study, String time_study) {
         this.room = room;
         this.report = report;
         this.time_report = time_report;
         this.date_study = date_study;
+        this.time_study = time_study;
     }
     public DamagedRoom(){
     }
@@ -44,5 +46,13 @@ public class DamagedRoom {
 
     public void setDate_study(String date_study) {
         this.date_study = date_study;
+    }
+
+    public String getTime_study() {
+        return time_study;
+    }
+
+    public void setTime_study(String time_study) {
+        this.time_study = time_study;
     }
 }

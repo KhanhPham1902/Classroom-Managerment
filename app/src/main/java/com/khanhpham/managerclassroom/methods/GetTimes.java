@@ -34,7 +34,7 @@ public class GetTimes {
 
     // check classroom time valid
     public static int isClassTimeValid(String classDate){
-        SimpleDateFormat sdf = new SimpleDateFormat("EEEE, dd-MM-yyyy", Locale.getDefault());
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault());
         Date currentDate = new Date();
         String formattedCurrentDate = sdf.format(currentDate);
 

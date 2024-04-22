@@ -120,7 +120,7 @@ public class ControlFragment extends Fragment {
             } else if(status==2){
                 Toast.makeText(requireContext(), getString(R.string.damaged_device), Toast.LENGTH_SHORT).show();
             } else if(isValid<0){
-                Toast.makeText(requireContext(), "Chưa đến ngày học", Toast.LENGTH_SHORT).show();
+                Toast.makeText(requireContext(), getString(R.string.not_date_study), Toast.LENGTH_SHORT).show();
             }
         }
     }

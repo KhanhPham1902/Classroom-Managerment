@@ -131,6 +131,7 @@
     <string name="noti_cancel">Bạn đã hủy đăng kí phòng học</string>
     <string name="no_noti">Không có thông báo nào</string>
     <string name="clear_all_success">Đã xóa tất cả thông báo</string>
+    <string name="not_date_study">Chưa đến ngày học</string>
 
     <string name="thdtcb">Thực hành Điện tử cơ bản</string>
     <string name="ltn">Kỹ thuật lập trình nhúng</string>

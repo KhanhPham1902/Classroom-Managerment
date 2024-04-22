@@ -60,7 +60,7 @@ public class HomeFragment extends Fragment implements OnItemClickListener {
     LinearLayout layoutHome;
     TextView textView, txtTimeHome, txtCheckRoom;
     CardView cvTime;
-    String id, date;
+    String id;
     private String date_study;
 
     @Override
@@ -127,9 +127,7 @@ public class HomeFragment extends Fragment implements OnItemClickListener {
             materialDatePicker.addOnPositiveButtonClickListener(new MaterialPickerOnPositiveButtonClickListener<Long>() {
                 @Override
                 public void onPositiveButtonClick(Long selection) {
-                    String nameDate = new SimpleDateFormat("EEEE", Locale.getDefault()).format(new Date(selection));
-                    date = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date(selection));
-                    date_study = nameDate + ", " + date;
+                    date_study = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date(selection));
                     txtTimeHome.setText(date_study);
                     showTimeDialog();
                 }

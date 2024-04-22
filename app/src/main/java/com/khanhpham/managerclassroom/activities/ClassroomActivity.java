@@ -192,6 +192,7 @@ public class ClassroomActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (!snapshot.exists()) {
                     createClassroom(0, floor, room, "");
+                    showAlertDialog(floor, room);
                 } else {
                     Integer status = snapshot.child("status").getValue(Integer.class);
                     if (status == 0) { // empty room

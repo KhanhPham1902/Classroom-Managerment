@@ -108,7 +108,7 @@ public class RoomInfoActivity extends AppCompatActivity {
             if(isTimeValid==0) {
                 showAlertDialog();
             }else{
-                Toast.makeText(this, "Chưa đến ngày học", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, getString(R.string.not_date_study), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -122,7 +122,7 @@ public class RoomInfoActivity extends AppCompatActivity {
     private void databaseProcess(){
         // create damaged room database
         String timeReport = GetTimes.getTimeUpdate(RoomInfoActivity.this);
-        DamagedRoom damagedRoom = new DamagedRoom(room, report, timeReport,dateStudy);
+        DamagedRoom damagedRoom = new DamagedRoom(room, report, timeReport,dateStudy,timeStudy);
         DatabaseReference referenceDamaged = database.getReference().child("Damaged rooms").child(timeReport);
         referenceDamaged.setValue(damagedRoom);
 
