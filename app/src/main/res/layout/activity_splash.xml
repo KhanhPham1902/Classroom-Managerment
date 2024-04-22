@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:theme="@style/SplashTheme"
+    tools:context=".activities.SplashActivity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardviewSplash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="50dp">
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:elevation="10dp"
+            android:src="@drawable/haui"
+            android:background="@drawable/custom_imageview"/>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/txtSplash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/manager_classroom"
+        android:textStyle="bold"
+        android:textSize="22sp"
+        android:layout_marginTop="10dp"
+        android:textColor="#FF9100"/>
+</LinearLayout>

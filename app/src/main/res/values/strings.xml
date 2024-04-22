@@ -1,0 +1,172 @@
+<resources>
+    <string name="app_name" translatable="false">Manager classroom</string>
+
+    <string name="warning">Cảnh báo</string>
+    <string name="noti">Thông báo</string>
+    <string name="error">Lỗi! Đã xảy ra lỗi</string>
+
+    <string name="name_empty">Không để trống</string>
+
+    <string name="email_empty">Email không để trống</string>
+    <string name="email_invalid">Email không hợp lệ</string>
+    <string name="email_format_error">Định dạng email không chính xác</string>
+    <string name="email_verification">Hãy xác minh email của bạn ngay bây giờ. Bạn không thể đăng nhập nếu không xác minh email.</string>
+    <string name="email_veri_check">Email chưa được xác minh</string>
+    <string name="email_pre_enter">Email không hợp lệ. Vui lòng nhập lại email của bạn</string>
+    <string name="email_send_failed">Có lỗi trong quá trình gửi xác nhận. Xin thử lại.</string>
+
+
+    <string name="pass_empty">Mật khẩu không để trống</string>
+    <string name="pass_lenght">Mật khẩu phải nhiều hơn 6 ký tự</string>
+    <string name="pass_match">Mật khẩu không khớp</string>
+    <string name="confpass_empty">Không để trống</string>
+
+    <string name="signup_success">Tạo tài khoản thành công</string>
+    <string name="signup_failed">Đăng ký thất bại\nĐịa chỉ email đã được sử dụng bởi một tài khoản khác.</string>
+
+    <string name="login_success">Đăng nhập thành công</string>
+    <string name="login_failed">Đăng nhập thất bại\nVui lòng thử lại</string>
+
+    <string name="user_check">Người dùng không tồn tại hoặc không còn hợp lệ\nVui lòng đăng ký lại.</string>
+    <string name="user_info_check">Thông tin không hợp lệ\nKiểm tra và nhập lại.</string>
+
+    <string name="signup_title">Xin chào, \nVui lòng đăng ký</string>
+    <string name="sign_up">Đăng ký</string>
+    <string name="login">Đăng nhập</string>
+    <string name="confirm">Xác nhận</string>
+    <string name="password">Mật khẩu</string>
+    <string name="confirm_password">Xác nhận mật khẩu</string>
+    <string name="already_login">Đã có tài khoản? Đăng nhập</string>
+    <string name="login_title">Xin chào, \nVui lòng đăng nhập</string>
+
+    <string name="forgot_password">Quên mật khẩu?</string>
+    <string name="dont_have_account">Chưa có tài khoản? Đăng ký</string>
+    <string name="forgot_pass_content">Vui lòng nhập địa chỉ email liên kết với tài khoản của bạn.</string>
+    <string name="forgot_pass_reset">Link đặt lại mật khẩu đã được gửi tới email đăng ký của bạn. Vui lòng kiểm tra thông báo email của bạn.</string>
+    <string name="success">Thành công</string>
+    <string name="done">Đóng</string>
+    <string name="manager_classroom">Quản lý phòng học</string>
+
+    <string name="no_internet">Không có kết nối internet, vui lòng kết nối lại</string>
+    <string name="conti">Tiếp tục</string>
+    <string name="classroom_list">Danh sách phòng học</string>
+    <string name="classroom_info">Thông tin phòng học</string>
+    <string name="home">Trang chủ</string>
+    <string name="profile">Hồ sơ</string>
+    <string name="control_device">Điều khiển thiết bị</string>
+    <string name="control">Điều khiển</string>
+
+    <!-- TODO: Remove o change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="account_info">Tài khoản</string>
+    <string name="email">Email</string>
+    <string name="floor13">Tầng 13 - Khoa điện tử</string>
+    <string name="floor14">Tầng 14 - Khoa điện tử</string>
+    <string name="floor15">Tầng 15 - Khoa điện tử</string>
+    <string name="floor16">Tầng 16 - Khoa điện tử</string>
+    <string name="note">Chú thích:</string>
+    <string name="blank_room">Phòng trống</string>
+    <string name="selected_room">Phòng đã được sử dụng</string>
+    <string name="damaged_room">Phòng đang bảo trì</string>
+    <string name="select_room">Đặt lịch phòng học</string>
+    <string name="morning_time">Ca sáng:  7h00 - 12h00</string>
+    <string name="afternoon_time">Ca chiều: 12h30 - 17h30</string>
+    <string name="evening_time">Ca tối:   17h45 - 21h55</string>
+    <string name="settings">Cài đặt</string>
+    <string name="logout">Đăng xuất</string>
+    <string name="profile_info">Thông tin tài khoản</string>
+    <string name="customize">Tùy chỉnh</string>
+    <string name="introduction">Giới thiệu</string>
+    <string name="agree">Đồng ý</string>
+    <string name="skip">Bỏ qua</string>
+    <string name="desc_logout">Bạn có chắc chắn muốn đăng xuất tài khoản này?</string>
+    <string name="username">Họ và tên</string>
+
+    <string name="room_repair">Phòng đang bảo trì/ sửa chữa</string>
+    <string name="room_full">Phòng đã được sử dụng</string>
+    <string name="room_select">Bạn đã đăng kí phòng này rồi</string>
+    <string name="room_desc">Đăng ký sử dụng phòng học này?\n(Hãy chọn học phần giảng dạy bên dưới)</string>
+    <string name="subject_warning">Hãy chọn học phần trước khi đăng ký</string>
+    <string name="subject">Nhập tên/mã học phần</string>
+    <string name="select_success">Đăng kí phòng học thành công</string>
+    <string name="good_afternoon">Chào buổi chiều!</string>
+    <string name="good_morning">Chào buổi sáng!</string>
+    <string name="good_evening">Chào buổi tối!</string>
+    <string name="info_room">Thông tin phòng học đã đăng ký</string>
+    <string name="subject_name">Lớp học phần</string>
+    <string name="teacher">Giảng viên</string>
+    <string name="study_time">Ca học</string>
+    <string name="off">TẮT</string>
+    <string name="on">BẬT</string>
+    <string name="check_room_selected">Bạn chưa đăng kí phòng học nào</string>
+    <string name="time_select">Ngày đăng kí (nhấp vào mục bên dưới để chọn ngày)</string>
+    <string name="time_study">Ngày học</string>
+    <string name="report">Báo cáo/khiếu nại</string>
+    <string name="time_signup">Thời gian đăng kí</string>
+    <string name="languages">Ngôn ngữ</string>
+    <string name="darkmode">Chế độ tối</string>
+    <string name="vietnamese">Tiếng Việt</string>
+    <string name="english">Tiếng Anh</string>
+    <string name="report_about">Bạn muốn báo cáo/khiếu nại về gì?</string>
+    <string name="light_damaged">Bóng đèn bị hư hỏng.</string>
+    <string name="aircondi_damaged">Điều hòa bị hư hỏng.</string>
+    <string name="fan_damaged">Quạt trần bị hư hỏng.</string>
+    <string name="projector_damaged">Máy chiếu bị hư hỏng.</string>
+    <string name="others">Khác</string>
+    <string name="classroom">Phòng</string>
+    <string name="calendar">ngày / tháng / năm</string>
+    <string name="loading">Đang tải…</string>
+    <string name="choose_time">Chọn ca học</string>
+    <string name="choose_problem">Hãy chọn ít nhất 1 vấn đề</string>
+    <string name="saved">Đã lưu</string>
+    <string name="please_login">Vui lòng đăng nhập tài khoản</string>
+    <string name="select_day">Chọn ngày</string>
+    <string name="cancel_signup">Hủy đăng ký</string>
+    <string name="cancel_desc">Bạn có chắc muốn hủy đăng ký phòng học này?</string>
+    <string name="cancel_success">Đã hủy đăng ký phòng học</string>
+    <string name="has_damaged">đang hư hỏng</string>
+    <string name="damaged_device">Phòng đang hư hỏng, không thể điều khiển thiết bị</string>
+    <string name="clear_all">Xóa hết</string>
+    <string name="noti_register">Bạn đã đăng kí thành công phòng học</string>
+    <string name="noti_cancel">Bạn đã hủy đăng kí phòng học</string>
+    <string name="no_noti">Không có thông báo nào</string>
+    <string name="clear_all_success">Đã xóa tất cả thông báo</string>
+
+    <string name="thdtcb">Thực hành Điện tử cơ bản</string>
+    <string name="ltn">Kỹ thuật lập trình nhúng</string>
+    <string name="ctdl">Cấu trúc dữ liệu và giải thuật</string>
+    <string name="dts">Điện tử số</string>
+    <string name="thdttt">Thực hành điện tử tương tự</string>
+    <string name="python">Lập trình Python</string>
+    <string name="cad">CAD trong điện tử</string>
+    <string name="xlths">Xử lý tín hiệu số</string>
+    <string name="dacs">Đồ án cơ sở ngành</string>
+    <string name="mmt">Mạng máy tính và truyền thông</string>
+    <string name="vxl">Vi xử lý và cấu trúc máy tính</string>
+    <string name="vdk">Vi điều khiển</string>
+    <string name="tkmtn">Thiết kế ứng dụng trên máy tính nhúng</string>
+    <string name="tkdd">Thiết kế ứng dụng trên thiết bị di động</string>
+    <string name="dacn">Đồ án chuyên ngành</string>
+    <string name="dldkmt">Đo lường điều khiển bằng máy tính</string>
+    <string name="tkhtn">Thiết kế hệ thống nhúng</string>
+    <string name="hdl">Thiết kế hệ thống số dùng HDL</string>
+    <string name="ltntu">Lọc thích nghi và tối ưu</string>
+    <string name="ltm">Lập trình mạng và truyền thông</string>
+    <string name="tkmnm">Thiết kế phần mềm dựa trên mã nguồn mở</string>
+    <string name="hmnd">Học máy và nhận dạng</string>
+    <string name="xla">Xử lý ảnh</string>
+    <string name="datn">Đồ án tốt nghiệp</string>
+
+    <string name="intro">Giới thiệu</string>
+    <string name="intro_start">Ứng dụng Quản lý Phòng Học được thiết kế để giúp bạn dễ dàng quản lý và sử dụng các phòng học một cách hiệu quả. Với chức năng đăng ký phòng học và điều khiển thiết bị trong phòng học đã đăng ký, bạn có thể tổ chức các buổi học, hội thảo hoặc cuộc họp một cách thuận tiện và linh hoạt hơn bao giờ hết.</string>
+    <string name="intro_feature">Tính năng nổi bật:</string>
+    <string name="feature1">1. Đăng ký phòng học: </string>
+    <string name="feature2">2. Điều khiển thiết bị: </string>
+    <string name="feature3">3. Quản lý lịch trình: </string>
+    <string name="feature4">4. Thông báo và nhắc nhở: </string>
+    <string name="intro_feature1">Dễ dàng tìm kiếm và đặt phòng học theo yêu cầu của bạn, từ số lượng người tham gia đến thời gian sử dụng.</string>
+    <string name="intro_feature2">Kiểm soát các thiết bị trong phòng học như máy chiếu, đèn và quạt từ xa, giúp bạn tiết kiệm thời gian và nâng cao trải nghiệm sử dụng.</string>
+    <string name="intro_feature3">Theo dõi lịch trình sử dụng phòng học và quản lý các đặt phòng hiện tại và tương lai của bạn một cách thuận tiện.</string>
+    <string name="intro_feature4">Nhận thông báo và nhắc nhở về các cuộc họp sắp tới và các thay đổi trong lịch trình của bạn.</string>
+    <string name="intro_end">Với giao diện đơn giản và dễ sử dụng, ứng dụng Quản lý Phòng Học là công cụ không thể thiếu cho mọi người muốn tổ chức và quản lý các buổi học và hội thảo một cách thông minh và hiệu quả. </string>
+</resources>
