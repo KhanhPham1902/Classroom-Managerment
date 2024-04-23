@@ -46,6 +46,7 @@ import com.khanhpham.managerclassroom.models.OnItemClickListener;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -222,6 +223,36 @@ public class HomeFragment extends Fragment implements OnItemClickListener {
         CardView cvMorning = dialog.findViewById(R.id.cvMorning);
         CardView cvAfternoon = dialog.findViewById(R.id.cvAfternoon);
         CardView cvEvening = dialog.findViewById(R.id.cvEvening);
+
+        // get current date
+        SimpleDateFormat sdfDate = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault());
+        Date currentDate = new Date();
+        String formattedCurrentDate = sdfDate.format(currentDate);
+        // get current time
+        LocalTime currentTime = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            currentTime = LocalTime.now();
+
+            if(formattedCurrentDate.compareTo(date_study)==0) {
+                if (currentTime.isBefore(LocalTime.of(6,30))) {
+                    cvMorning.setVisibility(View.VISIBLE);
+                    cvAfternoon.setVisibility(View.VISIBLE);
+                    cvEvening.setVisibility(View.VISIBLE);
+                } else if (currentTime.isBefore(LocalTime.of(12,30))) {
+                    cvMorning.setVisibility(View.GONE);
+                    cvAfternoon.setVisibility(View.VISIBLE);
+                    cvEvening.setVisibility(View.VISIBLE);
+                } else if (currentTime.isBefore(LocalTime.of(17,30))) {
+                    cvMorning.setVisibility(View.GONE);
+                    cvAfternoon.setVisibility(View.GONE);
+                    cvEvening.setVisibility(View.VISIBLE);
+                } else if (currentTime.isBefore(LocalTime.of(22, 0))) {
+                    cvMorning.setVisibility(View.GONE);
+                    cvAfternoon.setVisibility(View.GONE);
+                    cvEvening.setVisibility(View.GONE);
+                }
+            }
+        }
 
         // select morning
         cvMorning.setOnClickListener(v -> {
