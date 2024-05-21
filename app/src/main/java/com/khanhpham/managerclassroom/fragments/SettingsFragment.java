@@ -18,6 +18,7 @@ import android.widget.ImageView;
 import com.khanhpham.managerclassroom.R;
 
 import java.util.Locale;
+import java.util.Objects;
 
 public class SettingsFragment extends Fragment {
 
@@ -37,8 +38,8 @@ public class SettingsFragment extends Fragment {
         btnUK = view.findViewById(R.id.btnUK);
         btnBackSettings = view.findViewById(R.id.btnBackSettings);
 
-        // save to SharedPreferences
-        sharedPreferences = getActivity().getSharedPreferences("SETTINGS", Context.MODE_PRIVATE);
+        // get from SharedPreferences
+        sharedPreferences = requireActivity().getSharedPreferences("SETTINGS", Context.MODE_PRIVATE);
         darkMode = sharedPreferences.getBoolean("dark",false);
         langCode = sharedPreferences.getString("lang","");
 

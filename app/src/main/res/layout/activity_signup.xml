@@ -54,7 +54,6 @@
                     android:paddingStart="15dp"
                     android:text="@string/sign_up"
                     android:textAlignment="textStart"
-                    style="@style/TEXT"
                     android:textSize="30sp"
                     android:textStyle="bold" />
 
@@ -70,8 +69,7 @@
                     android:drawablePadding="8dp"
                     android:hint="@string/username"
                     android:inputType="text"
-                    android:padding="10dp"
-                    style="@style/TEXT"/>
+                    android:padding="10dp" />
 
                 <EditText
                     android:id="@+id/signupEmail"
@@ -85,8 +83,7 @@
                     android:drawablePadding="8dp"
                     android:hint="@string/email"
                     android:inputType="textEmailAddress"
-                    android:padding="10dp"
-                    style="@style/TEXT" />
+                    android:padding="10dp"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -102,7 +99,6 @@
                         android:id="@+id/signupPassword"
                         android:hint="@string/password"
                         android:padding="10dp"
-                        style="@style/TEXT"
                         android:inputType="textPassword"
                         android:background="@drawable/custom_edt"
                         android:drawableLeft="@drawable/lock"
@@ -132,7 +128,6 @@
                         android:id="@+id/signupConfirmPass"
                         android:hint="@string/confirm_password"
                         android:padding="10dp"
-                        style="@style/TEXT"
                         android:inputType="textPassword"
                         android:background="@drawable/custom_edt"
                         android:drawableLeft="@drawable/lock"
@@ -177,7 +172,6 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="20dp"
                     android:text="@string/already_login"
-                    style="@style/TEXT"
                     android:textSize="18sp" />
             </LinearLayout>
 

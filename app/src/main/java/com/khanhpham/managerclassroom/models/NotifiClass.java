@@ -3,7 +3,6 @@ package com.khanhpham.managerclassroom.models;
 public class NotifiClass {
     private String description;
     private String time_noti;
-    private String imgNoti;
     private int status; //0:cancel register, 1:success register, 2:report room
 
     public NotifiClass(String description, String time_noti, int status) {

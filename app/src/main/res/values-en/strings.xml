@@ -130,8 +130,10 @@
     <string name="noti_cancel">You have unregistered from classroom</string>
     <string name="no_noti">No notifications</string>
     <string name="clear_all_success">All notifications removed</string>
+    <string name="clear_all_noti">Delete all notifications?</string>
     <string name="not_date_study">It is not even school day yet</string>
 
+    <string name="deleted_noti">Notification removed</string>
     <string name="thdtcb">Practice Basic Electronics</string>
     <string name="ltn">Embedded programming techniques</string>
     <string name="ctdl">Data structures and algorithms</string>
@@ -169,4 +171,5 @@
     <string name="intro_feature3">Track classroom usage schedules and manage your current and future bookings conveniently.</string>
     <string name="intro_feature4">Receive notifications and reminders about upcoming meetings and any changes in your schedule.</string>
     <string name="intro_end">With a simple and user-friendly interface, the Classroom Management App is an indispensable tool for anyone looking to organize and manage classes and seminars intelligently and efficiently. </string>
+    <string name="delete">Delete</string>
 </resources>

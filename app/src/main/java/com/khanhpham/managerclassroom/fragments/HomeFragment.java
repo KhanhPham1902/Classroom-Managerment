@@ -161,10 +161,8 @@ public class HomeFragment extends Fragment implements OnItemClickListener {
                         assert classroom != null;
 
                         int isTimeValid = GetTimes.isClassTimeValid(classroom.getDate_study());
-                        if (isTimeValid < 0) {
-                            classroomArrayList.add(classroom);
-                        } else if (isTimeValid == 0) {
-                            classroomArrayList.add(classroom);
+                        if (isTimeValid <= 0) {
+                            classroomArrayList.add(0, classroom);
                         } else {
                             // remove from database
                             dataSnapshot.getRef().removeValue();

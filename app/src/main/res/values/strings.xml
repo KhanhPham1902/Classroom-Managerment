@@ -131,7 +131,9 @@
     <string name="noti_cancel">Bạn đã hủy đăng kí phòng học</string>
     <string name="no_noti">Không có thông báo nào</string>
     <string name="clear_all_success">Đã xóa tất cả thông báo</string>
+    <string name="clear_all_noti">Xóa hết tất cả thông báo?</string>
     <string name="not_date_study">Chưa đến ngày học</string>
+    <string name="deleted_noti">Đã xóa thông báo</string>
 
     <string name="thdtcb">Thực hành Điện tử cơ bản</string>
     <string name="ltn">Kỹ thuật lập trình nhúng</string>
@@ -170,4 +172,5 @@
     <string name="intro_feature3">Theo dõi lịch trình sử dụng phòng học và quản lý các đặt phòng hiện tại và tương lai của bạn một cách thuận tiện.</string>
     <string name="intro_feature4">Nhận thông báo và nhắc nhở về các cuộc họp sắp tới và các thay đổi trong lịch trình của bạn.</string>
     <string name="intro_end">Với giao diện đơn giản và dễ sử dụng, ứng dụng Quản lý Phòng Học là công cụ không thể thiếu cho mọi người muốn tổ chức và quản lý các buổi học và hội thảo một cách thông minh và hiệu quả. </string>
+    <string name="delete">Xóa</string>
 </resources>

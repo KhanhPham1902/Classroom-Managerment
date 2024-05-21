@@ -54,13 +54,13 @@ public class ControlFragment extends Fragment {
         assert time_study != null;
         switch (time_study) {
             case "morning":
-                binding.txtFloorRoom.setText(date_study+"\n"+getText(R.string.study_time)+": "+getText(R.string.morning_time)+"\n"+getText(R.string.classroom)+": " + room);
+                binding.txtFloorRoom.setText(getText(R.string.time_study)+": "+date_study+"\n"+getText(R.string.study_time)+": "+getText(R.string.morning_time)+"\n"+getText(R.string.classroom)+": " + room);
                 break;
             case "afternoon":
-                binding.txtFloorRoom.setText(date_study+"\n"+getText(R.string.study_time)+": "+getText(R.string.afternoon_time)+"\n"+getText(R.string.classroom)+": " + room);
+                binding.txtFloorRoom.setText(getText(R.string.time_study)+": "+date_study+"\n"+getText(R.string.study_time)+": "+getText(R.string.afternoon_time)+"\n"+getText(R.string.classroom)+": " + room);
                 break;
             case "evening":
-                binding.txtFloorRoom.setText(date_study+"\n"+getText(R.string.study_time)+": "+getText(R.string.evening_time)+"\n"+getText(R.string.classroom)+": " + room);
+                binding.txtFloorRoom.setText(getText(R.string.time_study)+": "+date_study+"\n"+getText(R.string.study_time)+": "+getText(R.string.evening_time)+"\n"+getText(R.string.classroom)+": " + room);
                 break;
         }
 
