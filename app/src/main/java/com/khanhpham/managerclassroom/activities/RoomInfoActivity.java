@@ -104,7 +104,10 @@ public class RoomInfoActivity extends AppCompatActivity {
         // Button report
         binding.btnReport.setOnClickListener(v -> {
             // check date study valid
-            int isTimeValid = GetTimes.isClassTimeValid(dateStudy);
+            int isTimeValid = 0;
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                isTimeValid = GetTimes.isTimeValid(dateStudy);
+            }
             if(isTimeValid==0) {
                 showAlertDialog();
             }else{

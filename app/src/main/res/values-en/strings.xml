@@ -108,12 +108,12 @@
     <string name="english">English</string>
     <string name="report_about">What do you want to report/complain about?</string>
     <string name="light_damaged">The light bulb is damaged</string>
-    <string name="aircondi_damaged">The air-conditioner is damaged</string>
+    <string name="aircondi_damaged">The amplifier is damaged</string>
     <string name="fan_damaged">Ceiling fan is damaged</string>
     <string name="projector_damaged">The projector is damaged</string>
     <string name="others">Others</string>
     <string name="classroom">Classroom</string>
-    <string name="calendar">day / month / year</string>
+    <string name="calendar">day - month - year</string>
     <string name="loading">Loading…</string>
     <string name="choose_time">Choose study time</string>
     <string name="choose_problem">Please choose at least 1 problem</string>
@@ -172,4 +172,7 @@
     <string name="intro_feature4">Receive notifications and reminders about upcoming meetings and any changes in your schedule.</string>
     <string name="intro_end">With a simple and user-friendly interface, the Classroom Management App is an indispensable tool for anyone looking to organize and manage classes and seminars intelligently and efficiently. </string>
     <string name="delete">Delete</string>
+    <string name="restore_success">Notification restored</string>
+    <string name="on_all">Turn on all devices</string>
+    <string name="off_all">Turn off all devices</string>
 </resources>

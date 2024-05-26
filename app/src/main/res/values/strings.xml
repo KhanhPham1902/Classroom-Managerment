@@ -109,12 +109,12 @@
     <string name="english">Tiếng Anh</string>
     <string name="report_about">Bạn muốn báo cáo/khiếu nại về gì?</string>
     <string name="light_damaged">Bóng đèn bị hư hỏng.</string>
-    <string name="aircondi_damaged">Điều hòa bị hư hỏng.</string>
+    <string name="aircondi_damaged">Amply bị hư hỏng.</string>
     <string name="fan_damaged">Quạt trần bị hư hỏng.</string>
     <string name="projector_damaged">Máy chiếu bị hư hỏng.</string>
     <string name="others">Khác</string>
     <string name="classroom">Phòng</string>
-    <string name="calendar">ngày / tháng / năm</string>
+    <string name="calendar">ngày - tháng - năm</string>
     <string name="loading">Đang tải…</string>
     <string name="choose_time">Chọn ca học</string>
     <string name="choose_problem">Hãy chọn ít nhất 1 vấn đề</string>
@@ -173,4 +173,7 @@
     <string name="intro_feature4">Nhận thông báo và nhắc nhở về các cuộc họp sắp tới và các thay đổi trong lịch trình của bạn.</string>
     <string name="intro_end">Với giao diện đơn giản và dễ sử dụng, ứng dụng Quản lý Phòng Học là công cụ không thể thiếu cho mọi người muốn tổ chức và quản lý các buổi học và hội thảo một cách thông minh và hiệu quả. </string>
     <string name="delete">Xóa</string>
+    <string name="restore_success">Đã khôi phục thông báo</string>
+    <string name="on_all">Bật tất cả thiết bị</string>
+    <string name="off_all">Tắt tất cả thiết bị</string>
 </resources>

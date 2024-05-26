@@ -1,10 +1,16 @@
 package com.khanhpham.managerclassroom.methods;
 
 import android.content.Context;
+import android.os.Build;
+
+import androidx.annotation.RequiresApi;
 
 import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
@@ -32,12 +38,22 @@ public class GetTimes {
         return timeOfDay + " " + timeOfYear;
     }
 
-    // check classroom time valid
-    public static int isClassTimeValid(String classDate){
-        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault());
-        Date currentDate = new Date();
-        String formattedCurrentDate = sdf.format(currentDate);
+    // check class time valid
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public static int isTimeValid(String classDate) {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
+            return -1;
+        }
 
-        return formattedCurrentDate.compareTo(classDate);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        LocalDate currentDate = LocalDate.now();
+
+        try {
+            LocalDate classDateParsed = LocalDate.parse(classDate, formatter);
+            return currentDate.compareTo(classDateParsed);
+        } catch (DateTimeParseException e) {
+            e.printStackTrace();
+            return -1;
+        }
     }
 }

@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
@@ -46,7 +48,10 @@ import com.khanhpham.managerclassroom.models.OnItemClickListener;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -160,7 +165,10 @@ public class HomeFragment extends Fragment implements OnItemClickListener {
                         Classroom classroom = dataSnapshot.getValue(Classroom.class);
                         assert classroom != null;
 
-                        int isTimeValid = GetTimes.isClassTimeValid(classroom.getDate_study());
+                        int isTimeValid = 0;
+                        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                            isTimeValid = GetTimes.isTimeValid(classroom.getDate_study());
+                        }
                         if (isTimeValid <= 0) {
                             classroomArrayList.add(0, classroom);
                         } else {
@@ -184,22 +192,6 @@ public class HomeFragment extends Fragment implements OnItemClickListener {
                 dialog.dismiss();
             }
         });
-    }
-
-    // check class time valid
-    private int isClassTimeValid(String classDate) {
-        try {
-            SimpleDateFormat sdf = new SimpleDateFormat("EEEE, dd-MM-yyyy", Locale.getDefault());
-            Date currentDate = new Date();
-            String formattedCurrentDate = sdf.format(currentDate);
-            Date currentDateFormatted = sdf.parse(formattedCurrentDate);
-            Date classDateFormatted = sdf.parse(classDate);
-            assert currentDateFormatted != null;
-            return currentDateFormatted.compareTo(classDateFormatted);
-        } catch (ParseException e) {
-            e.printStackTrace();
-            return -1;
-        }
     }
 
     // send data

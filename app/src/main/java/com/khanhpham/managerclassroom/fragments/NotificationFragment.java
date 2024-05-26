@@ -117,7 +117,115 @@ public class NotificationFragment extends Fragment implements OnItemClickListene
         });
     }
 
-    // Remove notification from database
+    // Remove a notification from database
+    private void deleteOneNoti(NotifiClass notifiClass, DatabaseUpdateListener listener){
+        DatabaseReference reference = database.getReference().child("users").child(id).child("notifications").child(notifiClass.getTime_noti());
+        reference.removeValue().addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void unused) {
+                Toast.makeText(requireContext(), getString(R.string.deleted_noti), Toast.LENGTH_SHORT).show();
+                listener.onUpdateSuccess();
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(requireContext(), getText(R.string.error), Toast.LENGTH_SHORT).show();
+                listener.onUpdateFailure(e.getMessage());
+            }
+        });
+    }
+
+    // Restore a specific notification to the database
+    private void restoreNoti(NotifiClass notifiClass, DatabaseUpdateListener listener) {
+        DatabaseReference reference = database.getReference().child("users").child(id).child("notifications").child(notifiClass.getTime_noti());
+        reference.setValue(notifiClass).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void unused) {
+                Toast.makeText(requireContext(), getString(R.string.restore_success), Toast.LENGTH_SHORT).show();
+                listener.onUpdateSuccess();
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(requireContext(), getText(R.string.error), Toast.LENGTH_SHORT).show();
+                listener.onUpdateFailure(e.getMessage());
+            }
+        });
+    }
+
+    // Delete item notification when swipe left
+    NotifiClass deleteItem;
+    ItemTouchHelper.SimpleCallback simpleCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
+        @Override
+        public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+            return false;
+        }
+
+        @Override
+        public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+            int position = viewHolder.getAdapterPosition();
+            deleteItem = notifiClassArrayList.get(position);
+            notifiClassArrayList.remove(position);
+            adapter.notifyItemRemoved(position);
+
+            // Remove a notification from firebase
+            deleteOneNoti(deleteItem, new DatabaseUpdateListener() {
+                @Override
+                public void onUpdateSuccess() {
+                }
+
+                @Override
+                public void onUpdateFailure(String errorMessage) {
+                    // Restore a specific notification if error
+                    restoreNoti(deleteItem, new DatabaseUpdateListener() {
+                        @Override
+                        public void onUpdateSuccess() {
+                            adapter.notifyDataSetChanged();
+                        }
+
+                        @Override
+                        public void onUpdateFailure(String errorMessage) {
+                            Toast.makeText(requireContext(), errorMessage, Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                    Toast.makeText(requireContext(), errorMessage, Toast.LENGTH_SHORT).show();
+                }
+            });
+
+            Snackbar.make(rvNotification, R.string.deleted_noti, Snackbar.LENGTH_SHORT).setAction("Hoàn tác", new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // Restore a specific notification to firebase
+                    restoreNoti(deleteItem, new DatabaseUpdateListener() {
+                        @Override
+                        public void onUpdateSuccess() {
+                            adapter.notifyDataSetChanged();
+                        }
+
+                        @Override
+                        public void onUpdateFailure(String errorMessage) {
+                            Toast.makeText(requireContext(), errorMessage, Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
+            }).show();
+        }
+
+        @Override
+        public void onChildDraw(@NonNull Canvas c, @NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, float dX, float dY, int actionState, boolean isCurrentlyActive) {
+
+            new RecyclerViewSwipeDecorator.Builder(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
+                    .addSwipeLeftBackgroundColor(ContextCompat.getColor(requireContext(), R.color.damaged))
+                    .addSwipeLeftActionIcon(R.drawable.bin)
+                    .addSwipeLeftLabel(getString(R.string.delete))
+                    .create()
+                    .decorate();
+
+            super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
+        }
+    };
+
+    // Remove all notification from database
     private void deleteAllNoti(DatabaseUpdateListener listener){
         DatabaseReference reference = database.getReference().child("users").child(id).child("notifications");
         reference.removeValue().addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -179,44 +287,6 @@ public class NotificationFragment extends Fragment implements OnItemClickListene
 
         dialog.show();
     }
-
-    // Delete item notification when swipe left
-    NotifiClass deleteItem;
-    ItemTouchHelper.SimpleCallback simpleCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
-        @Override
-        public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
-            return false;
-        }
-
-        @Override
-        public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
-            int position = viewHolder.getAdapterPosition();
-            deleteItem = notifiClassArrayList.get(position);
-            notifiClassArrayList.remove(position);
-            adapter.notifyDataSetChanged();
-
-            Snackbar.make(rvNotification, R.string.deleted_noti, Snackbar.LENGTH_SHORT).setAction("Hoàn tác", new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    notifiClassArrayList.add(position, deleteItem);
-                    adapter.notifyDataSetChanged();
-                }
-            }).show();
-        }
-
-        @Override
-        public void onChildDraw(@NonNull Canvas c, @NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, float dX, float dY, int actionState, boolean isCurrentlyActive) {
-
-            new RecyclerViewSwipeDecorator.Builder(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
-                    .addSwipeLeftBackgroundColor(ContextCompat.getColor(requireContext(), R.color.damaged))
-                    .addSwipeLeftActionIcon(R.drawable.bin)
-                    .addSwipeLeftLabel(getString(R.string.delete))
-                    .create()
-                    .decorate();
-
-            super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
-        }
-    };
 
     @Override
     public void onItemClick(int position) {
